@@ -1,5 +1,6 @@
 let submit1 = document.getElementById("submit1");
 let submit2 = document.getElementById("submit2");
+let submit3 = document.getElementById("submit3");
 
 class Point {
     constructor(x, y) {
@@ -77,8 +78,6 @@ if (submit1 != null){
           document.getElementById("var-Error").innerText=Math.abs(Fn-5.333333);
     });
 }
-
-
 let S  = 0;
 let S2 = 0;
 if (submit2 != null){
@@ -111,6 +110,48 @@ if (submit2 != null){
           document.getElementById("var-Fn").innerText=Fn;
           document.getElementById("var-Fx").innerText=5.333333;
           document.getElementById("var-Error").innerText=Math.abs(Fn-5.333333);
+          document.getElementById("var-Error2").innerText=Pe;
+    });
+}
+const fxy = (x,y) => {
+    return (Math.sqrt(4-(x*x)-(y*y)));
+}
+if (submit3 != null){
+    submit3.addEventListener("click",()=>{
+        randomizedPointList = [];
+        S  = 0;
+        S2 = 0;
+        ns = 0;
+        A  = 0;
+        Fn = 0;
+        const fx = document.getElementById("fx").value;
+        const a = document.getElementById("a").value;
+        const b = document.getElementById("b").value;
+        const c = document.getElementById("c").value;
+        const d = document.getElementById("d").value;
+        const n = document.getElementById("n").value;
+        let x = 0;
+        let y = 0;
+        for (let i = 0; i < n; i++) {
+            // M1 
+            let r = Number(getRndInteger(0,1));
+            let r2 = Number(getRndInteger(0,1));
+            x  = a  + ((b-a)*r);
+            y  = a  + ((d-c)*r2);
+            // (4-x^2-y^2)^(1/2)
+            S  = S  + fxy(x,y);
+            S2 = S2 + (fxy(x,y) * fxy(x,y));
+            randomizedPointList.push(x);
+          }
+          const Favg  = S/n;
+          console.log(Favg)
+          const F2avg = S2/n;
+          console.log(F2avg)
+    
+          Fn = (b-a)*(d-c)*Favg;
+          Pe = (b-a)*(d-c)*Math.sqrt((F2avg-(Favg*Favg))/n)
+          document.getElementById("var-Fn").innerText=Fn;
+          document.getElementById("var-Fx").innerText=fx;
           document.getElementById("var-Error2").innerText=Pe;
     });
 }
