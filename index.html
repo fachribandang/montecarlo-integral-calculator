@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Monte carlo integral calculator online</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="styles.css">
+    </head> 
+    <body>
+        <header>
+            <h1>monte carlo integral calculator online</h1>
+        </header>
+        <div class="monte-carlo">
+            <div class="method">
+                <h2>monte carlo 1</h2>
+                <div class="img-container">
+                    <h3>How it works</h3>
+                    <img src="image/metode.JPG" alt="Dummy Image">
+                    <img src="image/error.JPG" alt="Dummy Image" style="width: 200px;">
+                    <img src="image/sample soal.JPG" alt="Dummy Image">
+                </div> 
+            </div>
+            <form class="monte-carlo-input">
+                <h3> input form : </h3>
+                <p>Deskripsi untuk setiap variable yang digunakan di metode ini</p>
+                <div class="var-desc">
+                    <p> n = jumlah bilangna yang di acak </p>
+                    <p> f(x) = rumus persamaan , direpresentasikan juga sebagai kurva</p>
+                    <p> n<small>s</small> = jumlah bilangan yang terdapat di bawah kurva</p>
+                    <p> F<small>n</small> = Aproksimasi </p>
+                    <p> a = batas kiri / bawah </p>
+                    <p> b = batas kanan / atas </p>
+                    <p> h = tinggi persegi, tinggi harus lebih besar dari nilai max integral f(x) </p>
+                </div>
+                <div class="var-input">
+                    <p>masukkan nilai variable penentu disini</p>
+                    <label for="fx">f(x) = </label>
+                    <input type="text" id="fx" name="fx" value="x^1/2" readonly></br>
+                    <label for="a">a &nbsp;&nbsp;&nbsp;= </label>
+                    <input type="number" id="a" name="a"></br>
+                    <label for="b">b &nbsp;&nbsp;&nbsp;= </label>
+                    <input type="number" id="b" name="b"></br>
+                    <label for="n">n &nbsp;&nbsp;&nbsp;= </label>
+                    <input type="number" id="n" name="n" step=10></br>
+                    <label for="h">h &nbsp;&nbsp;&nbsp;= </label>
+                    <input type="number" id="h" name="h"></br>
+                    <button type="button" id="submit">submit</button> 
+                </div>
+            </form>
+            <div class="var-output">
+                <h3> hasil : </h3>
+                <p> n<small>s</small> = <span id="var-ns"> ...... </span> </p>
+                <p> F<small>n</small> = <span id="var-Fn"> ...... </span>  </p>
+                <p> F(x) = <span id="var-Fx"> ...... </span>  </p>
+                <p> Error = <span id="var-Error"> ...... </span>  </p>
+            </div>
+        </div>
+        <footer>
+            <span>
+                created by fachri muhammad bandang haq
+            </span>
+        </footer>
+        <script type="text/javascript" src="monte-carlo-computional.js"></script>
+    </body>
+</html>
